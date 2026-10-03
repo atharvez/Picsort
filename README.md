@@ -74,13 +74,13 @@ To use the `--detector dlib` fallback option:
 1. Prepare your reference photos directory structure:
    ```
    people/
-   ├── Alice/
-   │   ├── alice_ref1.jpg
-   │   └── alice_ref2.jpg
-   ├── Bob/
-   │   └── bob_ref.jpg
-   └── Charlie/
-       └── charlie.png
+   |-- Alice/
+   |   |-- alice_ref1.jpg
+   |   \-- alice_ref2.jpg
+   |-- Bob/
+   |   \-- bob_ref.jpg
+   \-- Charlie/
+       \-- charlie.png
    ```
 
 2. Run PicSort in **known** mode:
@@ -124,21 +124,21 @@ This will output folders named `person_1`, `person_2`, ..., and `unknown_or_no_f
 
 ```
 picsort/
-├── picsort/
-│   ├── config.py           # Configuration data structures & Enums
-│   ├── utils.py            # HEIC & EXIF image loader, SHA256 hashing, logging
-│   ├── cache.py            # SQLite cache for face embeddings and hashes
-│   ├── detectors/
-│   │   ├── base.py         # Abstract BaseFaceDetector interface
-│   │   ├── insightface_engine.py  # InsightFace (CUDA / CPU auto-detection)
-│   │   └── dlib_engine.py         # face_recognition / dlib fallback
-│   ├── matcher.py          # Known face matching against /people/<name>/
-│   ├── clusterer.py        # DBSCAN clustering for unidentified faces
-│   ├── organizer.py        # Copy / Move / Symlink file organizer
-│   └── reporter.py         # Terminal summary table & JSON report export
-├── main.py                 # CLI entrypoint
-├── requirements.txt        # Package dependencies
-└── README.md               # Documentation
+|-- picsort/
+|   |-- config.py           # Configuration data structures & Enums
+|   |-- utils.py            # HEIC & EXIF image loader, SHA256 hashing, logging
+|   |-- cache.py            # SQLite cache for face embeddings and hashes
+|   |-- detectors/
+|   |   |-- base.py         # Abstract BaseFaceDetector interface
+|   |   |-- insightface_engine.py  # InsightFace (CUDA / CPU auto-detection)
+|   |   \-- dlib_engine.py         # face_recognition / dlib fallback
+|   |-- matcher.py          # Known face matching against /people/<name>/
+|   |-- clusterer.py        # DBSCAN clustering for unidentified faces
+|   |-- organizer.py        # Copy / Move / Symlink file organizer
+|   \-- reporter.py         # Terminal summary table & JSON report export
+|-- main.py                 # CLI entrypoint
+|-- requirements.txt        # Package dependencies
+\-- README.md               # Documentation
 ```
 
 ---
